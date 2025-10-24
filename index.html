@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <title>PokéDex</title>
+</head>
+<body>
+
+    <h1>PokéDex</h1>
+    <div id="pokedex-open">
+
+<!-- Left side of the pokédex -->
+        <div class="pokedex-left">
+            <button class="poke-lens"></button>
+           
+            <div class="poke-dots">
+                <button class="one"></button>
+                <button class="two"></button>
+                <button class="three"></button>
+            </div>
+
+            <div class="pokemon-card">
+                <div class="poke-name"></div>
+            </div>
+            <button class="black-dot"></button>
+
+            <div class="rb-btn">
+                <button class="red-btn"></button>
+                <button class="blue-btn"></button>
+            </div>
+
+            <div class="pokemon-moves"></div>
+
+            <div class="controll-btn">
+                <button class="up"></button>
+                <button class="right" onClick="nextPokemon()"></button>
+                <button class="down"></button>
+                <button class="left" onClick="prevPokemon()"></button>
+                <button class="middle"></button>
+            </div>
+        </div>
+
+<!-- Right side of the pokédex -->
+        <div class="pokedex-right">
+            <div class="poke-info"></div>
+
+            <div class="blue-panel">
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+                <button class="blue-squares"></button>
+            </div>
+
+            <div class="white-btn">
+                <button class="white-squares"></button>
+                <button class="white-squares"></button>
+            </div>
+
+            <button class="yellow-dot"></button>
+            <div class="black">
+                <button class="black-squares"></button>
+                <button class="black-squares"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>    
+</body>
+</html>
