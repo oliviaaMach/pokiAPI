@@ -41,4 +41,4 @@ PokéAPI - public API providing Pokémon data.
 
 ## Colors 
 
-<img src="/imgs/pokeapi_colors.png" width="200px">
+<img src="/imgs/pokeapi_colors.png" width="500px">
