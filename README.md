@@ -1,7 +1,7 @@
 # PokeDex - With data from PokeAPI
 This is a web-based PokéDex that lets users browse the first 151 Pokémon, view their images, types, attacks and Pokémon information 
 
-- This is a project based on the workshop about API. This is my first API project, and I did it along with Pokémons. -
+// This is a project based on the workshop about API. This is my first API project, and I did it along with Pokémons. //
 
 
 ## Demo
