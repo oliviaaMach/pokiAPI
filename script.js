@@ -41,13 +41,30 @@ function fetchPokemon(id = currentPokemonId) {
         fetch(pokeData.species.url)
             .then(response => response.json())
             .then(speciesData => {
-                let entry = speciesData.flavor_text_entries.find(entry => entry.language.name ==="en")?.flavor_text || "no description available.";
-                entry = entry.replace(/\f/g, ' ').replace(/\n/g, ' ');
+                let entries = speciesData.flavor_text_entries
+                .filter(entry => entry.language.name ==="en")
+                .map(entry => entry.flavor_text.replace(/\f/g, ' ').replace(/\n/g, ' '));
+
+                entries = [...new Set(entries)]; // tar bort dubletter
 
                 pokeInfo.innerHTML = `
-                <h3>Pokémon information:</h3> <p>${entry}</p>
+                <h3>Pokémon information: </h3> 
+                <p>${entries[0] || "no description available."} </p>
                 `;
-            })
+
+                const buttons = document.querySelectorAll('.blueSquare');
+                buttons.forEach((button, index) => {
+                    const text = entries[index] || "no description available.";
+                    button.textContent = ` `;
+
+                    button.addEventListener('click', () => {
+                        pokeInfo.innerHTML =  `
+                    <h3>Pokémon information: ${index + 1}</h3>
+                    <p>${text}</p> 
+                    `;
+                });
+            });
+        })
 
             .catch(err => {
                 pokeInfo.innerHTML = `<p>Error loading species info.</p>`;

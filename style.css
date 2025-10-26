@@ -218,7 +218,7 @@
 
     .black-dot:hover, .redBtn:hover, .blueBtn:hover,
     .up:hover, .right:hover, .down:hover, .left:hover,
-    .blue-squares:hover, .white-squares:hover, .yellow-dot:hover, .black-squares:hover {
+    .blueSquare:hover, .white-squares:hover, .yellow-dot:hover, .black-squares:hover {
         filter: brightness(1.2);
         transform: scale(1.1);
         transition: transform 0.2s, filter 0.2s;
@@ -347,6 +347,8 @@
     align-content: center;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.6);
     border-radius: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .poke-info h3 {
@@ -366,7 +368,7 @@
     align-self: center;
 }
 
-.blue-squares {
+.blueSquare {
     background-color: var(--darkblue);
     width: 50px;
     height: 50px;
