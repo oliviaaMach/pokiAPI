@@ -55,11 +55,10 @@ function fetchPokemon(id = currentPokemonId) {
                 const buttons = document.querySelectorAll('.blueSquare');
                 buttons.forEach((button, index) => {
                     const text = entries[index] || "no description available.";
-                    button.textContent = ` `;
 
                     button.addEventListener('click', () => {
                         pokeInfo.innerHTML =  `
-                    <h3>Pokémon information: ${index + 1}</h3>
+                    <h3>Pokémon information ${index + 1} </h3>
                     <p>${text}</p> 
                     `;
                 });
