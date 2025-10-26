@@ -203,7 +203,7 @@
 
     }
 
-    .red-btn, .blue-btn {
+    .redBtn, .blueBtn {
        width: 50px;
        height: 10px; 
        border-radius: 3px;
@@ -212,11 +212,23 @@
 
     }
 
-    .red-btn {
+    .redBtn {
         background-color: var(--red);
     }
 
-    .blue-btn {
+    .black-dot:hover, .redBtn:hover, .blueBtn:hover,
+    .up:hover, .right:hover, .down:hover, .left:hover,
+    .blue-squares:hover, .white-squares:hover, .yellow-dot:hover, .black-squares:hover {
+        filter: brightness(1.2);
+        transform: scale(1.1);
+        transition: transform 0.2s, filter 0.2s;
+}
+
+    .redBtn:active, .blueBtn:active {
+        transform: scale(0.95);
+    }
+
+    .blueBtn {
         background-color: var(--blue);
     }
 

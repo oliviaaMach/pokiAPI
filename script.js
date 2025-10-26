@@ -1,6 +1,6 @@
 const container = document.getElementById('pokedex-open');
 let currentPokemonId = 1; // Start with Bulbarsaur. If it starts with 4, it will be Squirtutle.
-
+let shiny = false;
 
 
 function fetchPokemon(id = currentPokemonId) {
@@ -18,11 +18,15 @@ function fetchPokemon(id = currentPokemonId) {
         const card = document.querySelector('.pokemon-card');
         const pokeName = document.querySelector('.poke-name');
 
+        const sprite = shiny
+            ? pokeData.sprites.other.showdown.front_shiny
+            : pokeData.sprites.other.showdown.front_default;
+
         card.innerHTML = `
         <h4>No: ${pokeData.id}</h4>
         <p>${pokeData.types.map(t => t.type.name).join(', ')}</p>
-        <img src="${pokeData.sprites.other.showdown.front_default}" alt="${pokeData.name}">
-        <div class="poke-name"><h3>${pokeData.name}</h3></div>
+        <img src="${sprite}" alt="${pokeData.name}">
+        <div class="poke-name"><h3>${pokeData.name}${shiny ? ' ' : ''}</h3></div>
         `;
         
 // Pokemon Attacks
@@ -31,12 +35,14 @@ function fetchPokemon(id = currentPokemonId) {
         <ul>Attack: ${pokeData.moves.slice(0,4).map(a =>`<li>${a.move.name}</li>`).join('')}</ul> 
 
         `;
+
 // Pokemon information
         const pokeInfo = document.querySelector('.poke-info');
         fetch(pokeData.species.url)
             .then(response => response.json())
             .then(speciesData => {
-                const entry = speciesData.flavor_text_entries.find(entry => entry.language.name ==="en")?.flavor_text || "no description available.";
+                let entry = speciesData.flavor_text_entries.find(entry => entry.language.name ==="en")?.flavor_text || "no description available.";
+                entry = entry.replace(/\f/g, ' ').replace(/\n/g, ' ');
 
                 pokeInfo.innerHTML = `
                 <h3>Pokémon information:</h3> <p>${entry}</p>
@@ -51,9 +57,20 @@ function fetchPokemon(id = currentPokemonId) {
 
 // Buttons 
 
+    function redBtn() {
+        shiny = false; 
+        fetchPokemon(currentPokemonId);
+    }
+
+    function blueBtn() {
+        shiny = true;
+        fetchPokemon(currentPokemonId);
+    }
+
     function nextPokemon() {
         if (currentPokemonId < 151) {
             currentPokemonId++;
+            shiny = false; 
             fetchPokemon(currentPokemonId);
         }
 };
@@ -61,9 +78,13 @@ function fetchPokemon(id = currentPokemonId) {
     function prevPokemon() {
         if (currentPokemonId > 1) {
             currentPokemonId--;
+            shiny = false; 
             fetchPokemon(currentPokemonId);
         }
 };
 
 fetchPokemon(); // Calling the function(fetchPokemon())
+
+document.querySelector('.blueBtn').addEventListener('click', blueBtn);
+document.querySelector('.redBtn').addEventListener('click', redBtn);
 
