@@ -205,18 +205,17 @@
         grid-column: 2 / 4;
     }
 
-
-    .black-dot {
-        background-color: var(--darkgrey);
-        height: 30px;
-        width: 30px;
-        border-radius: 50px;
-        grid-column: 2;
-        grid-row: 4;
-        align-self: start;
-        box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-        cursor: pointer;
-    }
+.blackDot {
+    background-color: var(--darkgrey);
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    grid-column: 2;
+    grid-row: 4;
+    align-self: start;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    cursor: pointer;
+}
 
     .black-dot:active {
         background: radial-gradient(circle 10px, var(--grey), var(--darkgrey));
@@ -242,7 +241,7 @@
         background-color: var(--red);
     }
 
-    .black-dot:hover, .redBtn:hover, .blueBtn:hover,
+    .blackDot:hover, .redBtn:hover, .blueBtn:hover,
     .up:hover, .right:hover, .down:hover, .left:hover,
     .blueSquare:hover, .white-squares:hover, .yellowDot:hover, .black-squares:hover {
         filter: brightness(1.2);
