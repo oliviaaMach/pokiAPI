@@ -5,12 +5,10 @@ This is a web-based PokéDex that lets users browse the first 151 Pokémon, view
 
 
 ## Demo
-
 <img src="/imgs/pokedex.png" width="200px">
 
 
 ## Features 
-
 - Browse Pokémon från No. 1 (Bulbarsaur) to No. 151 (Mew) with the controllers.
 - Interactive PokéDex with buttons to navigate next/previous Pokémon.
   - The red and blue button-lines turn Pokémon to shiny (blue button). Red button turns the Pokémon back to normal.
@@ -22,7 +20,8 @@ This is a web-based PokéDex that lets users browse the first 151 Pokémon, view
 
 ## Upcoming updates
 - Add searchbar for easily finding Pokémons (on hold)
-- Changable picture.
+- Changable picture
+- On and off button
 
 
 ## Installation
@@ -33,7 +32,6 @@ This is a web-based PokéDex that lets users browse the first 151 Pokémon, view
     cd: pokiAPI
 
 ### To see the webpage: 
-
 3. Rightclick in the index.html code and then choose 'Show preview'.
 
 
@@ -43,6 +41,6 @@ CSS3 - for styling, gradients and shadows.
 JavaScript - for fetching Pokémon data and DOM updates.
 PokéAPI - public API providing Pokémon data.
 
-## Colors 
 
+## Colors 
 <img src="/imgs/pokeapi_colors.png" width="500px">
