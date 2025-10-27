@@ -12,13 +12,17 @@ This is a web-based PokéDex that lets users browse the first 151 Pokémon, view
 ## Features 
 
 - Browse Pokémon från No. 1 (Bulbarsaur) to No. 151 (Mew) with the controllers.
-- Interactive PokéDex with buttons to navigate next/previous Pokémon (left and right- buttons).
+- Interactive PokéDex with buttons to navigate next/previous Pokémon.
+  - The red and blue button-lines turn Pokémon to shiny (blue button). Red button turns the Pokémon back to normal.
+  - Right and left buttons for going through the Pokémons.
+  - The ten blue squares-buttons gives you different information about the Pokémon. Som information needs to be scrolled down.
+  - Yellow button is to hear the Pokémons' cry again.
 - View Pokémons images, types and attacks. 
 - Shows Pokémon information (Information fetched from PokeAPI)
 
 ## Upcoming updates
-- Add searchbar for easily finding Pokémons.
-- Add more interactives in the other buttons (change information, attack-information or even sounds?)
+- Add searchbar for easily finding Pokémons (on hold)
+- Changable picture.
 
 
 ## Installation
