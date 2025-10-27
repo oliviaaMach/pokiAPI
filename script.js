@@ -33,7 +33,6 @@ function fetchPokemon(id = currentPokemonId) {
         const moves = document.querySelector('.pokemon-moves');
         moves.innerHTML = `
         <ul>Attack: ${pokeData.moves.slice(0,4).map(a =>`<li>${a.move.name}</li>`).join('')}</ul> 
-
         `;
 
 // Pokemon information
@@ -48,7 +47,7 @@ function fetchPokemon(id = currentPokemonId) {
                 entries = [...new Set(entries)]; // tar bort dubletter
 
                 pokeInfo.innerHTML = `
-                <h3>Pokémon information: </h3> 
+                <h3>Pokémon information 1</h3> 
                 <p>${entries[0] || "no description available."} </p>
                 `;
 
@@ -64,11 +63,36 @@ function fetchPokemon(id = currentPokemonId) {
                 });
             });
         })
-
             .catch(err => {
                 pokeInfo.innerHTML = `<p>Error loading species info.</p>`;
             });
     };
+
+
+// Playing Pokémonsound
+    const yellowButton = document.querySelector('.yellowDot');
+    yellowButton.addEventListener('click', () => {
+        // dynamically use currentPokemonId
+        const audioUrl = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/${currentPokemonId}.ogg`;
+        const audio = new Audio(audioUrl);
+        audio.play();
+    });
+
+    function playSound() {
+        const audioUrl = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/${currentPokemonId}.ogg`;
+        const audio = new Audio(audioUrl);
+        audio.play();
+    }
+
+
+// Poke-lens, scan-effekt
+
+    function scanLens() {
+        const lens = document.querySelector('.poke-lens');
+        lens.classList.remove('scan');
+        void lens.offsetWidth; // restart animation
+        lens.classList.add('scan');
+    }
 
 
 // Buttons 
@@ -88,6 +112,8 @@ function fetchPokemon(id = currentPokemonId) {
             currentPokemonId++;
             shiny = false; 
             fetchPokemon(currentPokemonId);
+            scanLens();
+            playSound();
         }
 };
 
@@ -96,8 +122,11 @@ function fetchPokemon(id = currentPokemonId) {
             currentPokemonId--;
             shiny = false; 
             fetchPokemon(currentPokemonId);
+            scanLens();
+            playSound();
         }
 };
+
 
 fetchPokemon(); // Calling the function(fetchPokemon())
 
