@@ -44,3 +44,7 @@ PokéAPI - public API providing Pokémon data.
 
 ## Colors 
 <img src="/imgs/pokeapi_colors.png" width="500px">
+
+
+## Author
+GitHub: https://github.com/oliviaaMach
